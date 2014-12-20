@@ -64,9 +64,8 @@ while True:
 		g= re.search('([0-9]*).*', invertv[1])
 		invertv = int(g.group(1))
 		
-		print ("trash: " + str(trash) + "  invertv: " +str(invertv))
-		#print m.group(0) + " " +  m.group(1) + " " + m.group(2)
-		#print trash
+		#debug message (adjust values, if needed)
+		#print ("trash: " + str(trash) + "  invertv: " +str(invertv))
 
 		#rotate left
 		if(trash < 400): 
