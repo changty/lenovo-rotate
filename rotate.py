@@ -62,7 +62,7 @@ while True:
 
 		invertv = line.split(',')
 		g= re.search('([0-9]*).*', invertv[1])
-		invertv = g.group(1)
+		invertv = int(g.group(1))
 		
 		print ("trash: " + str(trash) + "  invertv: " +str(invertv))
 		#print m.group(0) + " " +  m.group(1) + " " + m.group(2)
@@ -87,7 +87,19 @@ while True:
 				os.system(rightFinger)
 				time.sleep(1);
 				type=1
-		elif(trash > 480 and trash < 530):
+
+		# #inverted mode
+		elif(invertv > 570):
+			if type!=2:
+				os.system(inverted)
+				os.system(invertedEraser)
+				os.system(invertedFinger)
+				os.system(invertedPen)
+				time.sleep(1); 
+				type=2
+
+		#normal mode
+		elif((trash > 480 and trash < 530)):
 			if type!=0:
 				os.system(normal)
 				os.system(normalPen)
@@ -95,6 +107,5 @@ while True:
 				os.system(normalEraser)
 				time.sleep(1);
 				type=0
-
 	except:	
 		type=47
